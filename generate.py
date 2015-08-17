@@ -8,13 +8,28 @@ import gen_utils.sequence_generator as sequence_generator
 from data_utils.parse_files import *
 import config.nn_config as nn_config
 
+
+
+import argparse
+
+
+parser = argparse.ArgumentParser(description='Generate wav file')
+parser.add_argument('modelFile',type=str,help="model file" )
+args = parser.parse_args()
+
+
 config = nn_config.get_neural_net_configuration()
 sample_frequency = config['sampling_frequency']
 inputFile = config['model_file']
+
+
 model_basename = config['model_basename']
 cur_iter = config['num_iters']
-model_filename = model_basename + str(cur_iter)
-output_filename = os.path.join(config['work_folder'],'./generated_song_%s.wav'%(str(cur_iter)))
+
+#model_filename = model_basename + str(cur_iter)
+model_filename = args.modelFile
+
+output_filename = os.path.join(config['work_folder'],'./generated_song.wav') 
 
 #Load up the training data
 print ('Loading training data')
