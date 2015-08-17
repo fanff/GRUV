@@ -12,9 +12,9 @@ config = nn_config.get_neural_net_configuration()
 sample_frequency = config['sampling_frequency']
 inputFile = config['model_file']
 model_basename = config['model_basename']
-cur_iter = 25
+cur_iter = config['num_iters']
 model_filename = model_basename + str(cur_iter)
-output_filename = './generated_song.wav'
+output_filename = os.path.join(config['work_folder'],'./generated_song_%s.wav'%(str(cur_iter)))
 
 #Load up the training data
 print ('Loading training data')
