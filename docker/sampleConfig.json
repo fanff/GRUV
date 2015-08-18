@@ -1,0 +1,8 @@
+{"dataset_directory": "./datasets/YourMusicLibrary/",
+ "epochs_per_iter": 2,
+ "hidden_dimension_size": 64,
+ "model_basename": "./datasets/YourMusicLibraryNPWeights",
+ "model_file": "./datasets/YourMusicLibraryNP",
+ "num_iters": 20,
+ "sampling_frequency": 44100,
+ "work_folder": "./datasets"}
